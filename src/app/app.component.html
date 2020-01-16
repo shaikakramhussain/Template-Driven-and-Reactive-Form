@@ -1,0 +1,34 @@
+<h1>Angular Practice(Template Driven Form)</h1>
+<div class="container">
+  <div class="row">
+    <div class="form-bg">
+      <form #regForm='ngForm' (ngSubmit)="Register(regForm)">
+        <h2 class="text-center">Registration Page</h2>
+      <br/>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="First Name" name="firstname" required ngModel>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Last Name" name="lastname" required ngModel>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Email ID" name="email" email required ngModel #email="ngModel">
+        <span class="help-bpx" *ngIf="email.touched && !email.valid">Please Enter Email Value</span>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="mobilenumber" required ngModel name="mobilenumber" placeholder="Mobile Number"
+        pattern="[6-9]{1}[0-9]{9}"  minlength="10"  maxlength="10"   #mobile="ngModel">
+        <span  *ngIf="mobile.touched && !mobile.valid">Please Enter Valid Mobile N.O</span>
+        
+      </div>
+    <br/>
+    <div class="align-center">
+      <button type="submit" class="btn btn-primary" id="Register" [disabled]="!regForm.valid">Register</button>
+    </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br/>
+<br>
+<app-reactive-form></app-reactive-form>

@@ -1,0 +1,9 @@
+input.ng-invalid.ng-touched{
+    border-color: red;
+    }
+    h1{
+        text-align: center;
+    }
+    container{
+        align-items: center;
+    }
